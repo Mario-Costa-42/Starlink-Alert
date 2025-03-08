@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
+import requests
 
-with open('home.html','r') as html_file:
-    content = html_file.read()
-    # print(content)
+html_text = requests.get('https://findstarlink.com/#3451668;3').text
+soup = BeautifulSoup(html_text, 'lxml')
 
-    soup = BeautifulSoup(content, 'lxml')
-    tag = soup.find('h1')
-    print(tag)
+
+resultBox = soup.find_all('span', class_ = 'entryTiming bold')
+print(resultBox)
