@@ -9,5 +9,5 @@ soup = BeautifulSoup(html_text, 'lxml')
 resultBox = soup.find_all('div', id = 'goodTimingsBlock')
 print(resultBox)
 
-resultBoxAvarege = soup.find_all('div', id = 'avgTimingsBlock').text
+resultBoxAvarege = soup.find_all('div', id = 'avgTimingsBlock')
 print(resultBoxAvarege)

@@ -22,8 +22,9 @@ driver.get("https://findstarlink.com/#3451668;3")  # Replace with your actual UR
 time.sleep(6)  # Adjust sleep time if needed
 
 # Find the element by class name
-element = driver.find_element(By.CLASS_NAME, "timingEntry")
-print("Extracted Text:", element.text)
+element = driver.find_element(By.ID, "avgTimings") #change for the good visialização later 
 
 # Close the browser
 driver.quit()
+
+print("Extracted Text:", element.text)
