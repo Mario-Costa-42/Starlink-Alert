@@ -63,7 +63,7 @@ for item in arrayWithAllInformation:
 
 # Converter a lista para JSON e passar para o outro script
 json_data = json.dumps(arrayWithAllInformation)
-subprocess.run(["python", "test.py", json_data])
+subprocess.run(["python", "data.py", json_data])
 
 # Fechar o navegador
 driver.quit()
