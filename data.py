@@ -9,3 +9,6 @@ if len(sys.argv) > 1:
         print("Erro ao decodificar os dados JSON recebidos.")
 else:
     print("Nenhum dado recebido.")
+
+
+#passar esses dados para o editImage.py 
