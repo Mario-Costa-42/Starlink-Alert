@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
+import sys
 import random
 
 # Path to the folder containing images
@@ -29,10 +30,10 @@ font_size = 36
 font = ImageFont.truetype(font_path, font_size)
 
 # Define the text content
-text1 = "Starlink estará visível no céu\nàs [00:00] do dia [00/00/0000]"
+text1 = f"Starlink estará visível no céu\nàs {sys.argv[1]}\nno dia {sys.argv[2]}"
 position1 = (30, 50)
 
-text2 = "O evento durará x minutos \n nas coordenadas: \n xx graus [direção cardeal]\n xx graus [direção cardeal] \n xx graus [direção cardeal]"
+text2 = f"O evento durará {sys.argv[3]} minutos \nOlhe de {sys.argv[4]} \npara {sys.argv[5]}"
 position2 = (30, 250)
 
 # Colors

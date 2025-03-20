@@ -14,8 +14,8 @@ time.sleep(6)  # Ajuste conforme necessário
 
 # Buscar o elemento correto (verifique se o ID está certo)
 try:
-    # element = driver.find_element(By.ID, "goodTimings") COMENTADA QND A VISUALIZAÇÃO ESTIVER BOA EU DESCOMENTO
-    element = driver.find_element(By.ID, "goodTimings")
+    # element = driver.find_element(By.ID, "goodTimings")  #COMENTADA QND A VISUALIZAÇÃO ESTIVER BOA EU DESCOMENTO
+    element = driver.find_element(By.ID, "avgTimings")
 except Exception as e:
     print("Erro ao encontrar o elemento:", e)
     driver.quit()
@@ -54,13 +54,6 @@ for i in range(len(date_time_matches)):
     }
     arrayWithAllInformation.append(info)
 
-# Exibir as informações extraídas
-# for item in arrayWithAllInformation:
-#     print(f"Time: {item['Time']}, Date: {item['Date']}")
-#     print(f"Duration: {item['Duration']} mins")
-#     print(f"Viewing Direction: {item['ViewingDirection']['From']} to {item['ViewingDirection']['To']}")
-#     print(f"Elevation: Start {item['Elevation']['Start']}°, Max {item['Elevation']['Max']}°, End {item['Elevation']['End']}°")
-#     print("-" * 50)
 
 # Converter a lista para JSON e passar para o outro script
 json_data = json.dumps(arrayWithAllInformation)
