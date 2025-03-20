@@ -54,7 +54,6 @@ for i in range(len(date_time_matches)):
     }
     arrayWithAllInformation.append(info)
 
-
 # Converter a lista para JSON e passar para o outro script
 json_data = json.dumps(arrayWithAllInformation)
 subprocess.run(["python", "data.py", json_data])

@@ -7,7 +7,7 @@ if len(sys.argv) > 1:
     try:
         arrayWithAllInformation = json.loads(sys.argv[1])
         # print(f"Informações recebidas:\n{json.dumps(arrayWithAllInformation, indent=4)}")
-        print("Os dados foram recebidos com sucesso!")
+        # print("Os dados foram recebidos com sucesso!")
     except json.JSONDecodeError:
         print("Erro ao decodificar os dados JSON recebidos.")
 else:
@@ -22,16 +22,12 @@ viewing_from = arrayWithAllInformation[0]['ViewingDirection']['From']
 viewing_to = arrayWithAllInformation[0]['ViewingDirection']['To']
 
 
-# Print extracted data
-print("Time:", time)
-print("Date:", date)
-print("Duration:", duration)
-print("Viewing From:", viewing_from)
-print("Viewing To:", viewing_to)
+#variables for verification to the datetime
+EventDateAndTime = date + " " + time 
 
 date = GoogleTranslator(source='en', target='pt').translate(date)
 cardeal1 =  GoogleTranslator(source='en', target='pt').translate(viewing_from)
 cardeal2 =  GoogleTranslator(source='en', target='pt').translate(viewing_to)
 
 # export the data
-subprocess.run(["python3", "editImage.py", time, date, duration, cardeal1, cardeal2])
+subprocess.run(["python3", "editImage.py", time, date, duration, cardeal1, cardeal2, EventDateAndTime])

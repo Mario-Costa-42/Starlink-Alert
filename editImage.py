@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import sys
 import random
+import subprocess
 
 # Path to the folder containing images
 caminho_da_pasta = 'images'
@@ -15,8 +16,6 @@ imagens = [arquivo for arquivo in arquivos if arquivo.startswith('spaceimage')]
 # Select a random image
 imagem_aleatoria = random.choice(imagens)
 
-# Display the selected image name
-print(f'A imagem selecionada aleatoriamente é: {imagem_aleatoria}')
 
 # Open the selected image
 image = Image.open(f'images/{imagem_aleatoria}')
@@ -66,4 +65,7 @@ os.makedirs(output_folder, exist_ok=True)
 
 # Save the edited image
 image.save("createdImages/image_with_text.jpg")
+
+EventDateAndTime = sys.argv[6]
+subprocess.run(["python3", "postOnInsta.py", EventDateAndTime])
 
