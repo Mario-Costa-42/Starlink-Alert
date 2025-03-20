@@ -18,9 +18,12 @@ PASSWORD = "**********"
 
 #Handleing the date and time 
 event_date_and_time = datetime.strptime(sys.argv[1], "%d %b %Y %I:%M %p")
-now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+now = datetime.now()
 
-
+if event_date_and_time < now:
+    print("The event has already passed.")
+else:
+    print("The event is still to come.")
 
 
 
