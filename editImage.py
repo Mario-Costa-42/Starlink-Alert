@@ -202,6 +202,8 @@ import random
 import hashlib
 import json
 import subprocess
+import dateparser
+from datetime import datetime
 
 print("Raw JSON input:", sys.argv[1])  # Depuração
 
@@ -249,6 +251,12 @@ for event in data:
         print(f"Imagem para o evento {event['Time']} já foi postada.")
         continue
 
+    # Data e hora do evento
+    event_time = event['Time']  
+    event_date = event['Date'] 
+    raw_datetime = f"{event['Date']} {event['Time']}"
+    timedate = dateparser.parse(raw_datetime)
+
     # Escolher uma imagem aleatória
     selected_image = random.choice(image_files)
     image = Image.open(os.path.join(image_folder, selected_image))
@@ -289,4 +297,5 @@ for event in data:
         json.dump(posted_hashes, f)
 
     # Chamar script de postagem
-    subprocess.run(["python3", "postOnInsta.py", output_path])
+    timedate_str = timedate.strftime("%Y-%m-%d_%H-%M-%S")
+    subprocess.run(["python3", "postOnInsta.py", output_path, timedate_str ])

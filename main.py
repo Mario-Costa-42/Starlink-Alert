@@ -15,8 +15,8 @@ time.sleep(6)  # Ajuste conforme necessário
 
 # Buscar o elemento correto (verifique se o ID está certo)
 try:
-    # element = driver.find_element(By.ID, "goodTimings")  #COMENTADA QND A VISUALIZAÇÃO ESTIVER BOA EU DESCOMENTO
-    element = driver.find_element(By.ID, "avgTimings")
+    element = driver.find_element(By.ID, "goodTimings")  #COMENTADA QND A VISUALIZAÇÃO ESTIVER BOA EU DESCOMENTO
+    # element = driver.find_element(By.ID, "avgTimings")
 except Exception as e:
     print("Erro ao encontrar o elemento:", e)
     driver.quit()
@@ -55,7 +55,6 @@ for i in range(len(date_time_matches)):
     }
     arrayWithAllInformation.append(info)
 
-print(arrayWithAllInformation)
 if arrayWithAllInformation == []:
     sys.exit()
 
