@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import re
+import sys
 import subprocess
 import json
 
@@ -53,6 +54,10 @@ for i in range(len(date_time_matches)):
         },
     }
     arrayWithAllInformation.append(info)
+
+print(arrayWithAllInformation)
+if arrayWithAllInformation == []:
+    sys.exit()
 
 # Converter a lista para JSON e passar para o outro script
 json_data = json.dumps(arrayWithAllInformation)
