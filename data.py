@@ -30,33 +30,6 @@ cardeal1 =  GoogleTranslator(source='en', target='pt').translate(viewing_from)
 cardeal2 =  GoogleTranslator(source='en', target='pt').translate(viewing_to)
 
 
-# export the data
-#subprocess.run(["python3", "editImage.py", time, date, duration, cardeal1, cardeal2, EventDateAndTime])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 event_data = json.dumps([
     {
         "Time": time,
