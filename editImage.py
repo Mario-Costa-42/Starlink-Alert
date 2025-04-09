@@ -47,7 +47,7 @@ def generate_hash(text):
 
 # Iterar sobre os eventos recebidos
 for event in data:
-    text_content = f"Starlink às {event['Time']}\nDia {event['Date']}\nDuração: {event['Duration']} min\nOlhe de {event['ViewingDirection']['From']} para {event['ViewingDirection']['To']}"
+    text_content = f"Starlink às {event['Time']}\nDia {event['Date']}\nDuração: {event['Duration']} min\nOlhe de {event['ViewingDirection']['From']} \npara {event['ViewingDirection']['To']}"
     event_hash = generate_hash(text_content)
 
     if event_hash in posted_hashes:
